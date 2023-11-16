@@ -14,7 +14,7 @@ struct Name: Codable {
 
 struct CountryDetails: Codable {
     let name: Name
-    let capital: String?
+    let capital: [String]?
     let region: String?
     let flag: String?
 }

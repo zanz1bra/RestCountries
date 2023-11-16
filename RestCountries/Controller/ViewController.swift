@@ -129,5 +129,4 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
         present(countryDetailsVC, animated: true, completion: nil)
     }
     
-    
 }

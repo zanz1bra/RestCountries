@@ -20,10 +20,11 @@ class NetworkManager{
         config.waitsForConnectivity = true
         
         URLSession(configuration: config).dataTask(with: request){
-            (data,response,err) in
-            guard err == nil else{
+            (data,response,error) in
+            guard error == nil else{
                 return
             }
+            
             
             guard let data = data else {return}
             
