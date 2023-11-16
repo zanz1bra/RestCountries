@@ -9,7 +9,7 @@ import Foundation
 
 
 class NetworkManager{
-    static func fetchData(url:String,completion: @escaping ([Country]) -> ()){
+    static func fetchData(url:String,completion: @escaping ([CountryDetails]) -> ()){
         
         guard let url = URL(string:url) else {return}
         
@@ -28,7 +28,7 @@ class NetworkManager{
             guard let data = data else {return}
             
             do{
-                let json = try JSONDecoder().decode([Country].self, from:data)
+                let json = try JSONDecoder().decode([CountryDetails].self, from:data)
                 completion(json)
             }
             catch{

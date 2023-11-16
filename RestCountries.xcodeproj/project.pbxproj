@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A44CF002B06412D00EFB595 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A44CEFF2B06412D00EFB595 /* DetailViewController.swift */; };
 		2A9131D92B052B0700A03FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9131D82B052B0700A03FC0 /* AppDelegate.swift */; };
 		2A9131DB2B052B0700A03FC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9131DA2B052B0700A03FC0 /* SceneDelegate.swift */; };
 		2A9131DD2B052B0700A03FC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9131DC2B052B0700A03FC0 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A44CEFF2B06412D00EFB595 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2A9131D52B052B0700A03FC0 /* RestCountries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestCountries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9131D82B052B0700A03FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A9131DA2B052B0700A03FC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				2A9131DC2B052B0700A03FC0 /* ViewController.swift */,
+				2A44CEFF2B06412D00EFB595 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				2A9131F02B0532AA00A03FC0 /* Country.swift in Sources */,
 				2A9131DD2B052B0700A03FC0 /* ViewController.swift in Sources */,
 				2A9131F32B05331000A03FC0 /* NetworkManager.swift in Sources */,
+				2A44CF002B06412D00EFB595 /* DetailViewController.swift in Sources */,
 				2A9131D92B052B0700A03FC0 /* AppDelegate.swift in Sources */,
 				2A9131DB2B052B0700A03FC0 /* SceneDelegate.swift in Sources */,
 			);

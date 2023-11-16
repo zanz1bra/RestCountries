@@ -12,9 +12,9 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
     
     private let cellID = "cell"
     private let countryAllUrl = "https://restcountries.com/v3.1/all"
-    private var countries: [Country] = []
+    private var countries: [CountryDetails] = []
     private var searchController: UISearchController! // Add search bar
-    private var filteredCountries: [Country] = []
+    private var filteredCountries: [CountryDetails] = []
     private var isSearchActive: Bool {
         return searchController.isActive && !searchController.searchBar.text!.isEmpty
     }
@@ -32,6 +32,20 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+            
+        }
+//        Set up Long Press Gesture
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        tableView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            let touchPoint = sender.location(in: tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                showCountryDetails(for: indexPath.row)
             }
         }
     }
@@ -87,7 +101,7 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for:indexPath  as IndexPath)
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
         
-        let country: Country
+        let country: CountryDetails
         if isSearchActive {
             country = filteredCountries[indexPath.row]
         } else {
@@ -96,10 +110,24 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
         
         cell.textLabel?.text = country.name.common
         cell.detailTextLabel?.text = country.name.official
+        
         return cell
     }
     
-    
+    func showCountryDetails(for index: Int) {
+        let country: CountryDetails
+        
+        if isSearchActive {
+            country = filteredCountries[index]
+        } else {
+            country = countries[index]
+        }
+        
+        let countryDetailsVC = DetailViewController()
+        countryDetailsVC.countryDetails = country
+        
+        present(countryDetailsVC, animated: true, completion: nil)
+    }
     
     
 }
